@@ -5,6 +5,7 @@ import { IoSearch } from 'react-icons/io5'
 import Button from '../UI/Button'
 import { FaRegHeart, FaRegUser } from 'react-icons/fa'
 import { FaBasketShopping } from 'react-icons/fa6'
+import { IoChevronForward } from "react-icons/io5";
 
 const Navbar = () => {
   const catagories =[
@@ -46,18 +47,26 @@ const Navbar = () => {
             </div>
          </div>
         </nav>
-        <div className='container overflow-x-auto pb-2.5 border-b border-b-[#EFEEEE]'>
-            <ul className='flex gap-14.5 justify-center whitespace-nowrap min-w-max'>
-               {
-                 catagories.map((item) => (
-                    <li>
-                        <Link to="/" className='font-medium text-[14px] md:text-base text-primary uppercase text-nowrap'>{item}</Link>
-                    </li>
-                 ))
-               }
+        <div className="container flex items-center justify-between pb-2.5 border-b border-b-[#EFEEEE]">
 
-            </ul>
-        </div>
+  <ul className="flex gap-[18px] md:gap-14 whitespace-nowrap overflow-x-auto">
+    {
+      catagories.map((item, i) => (
+        <li key={i}>
+          <Link
+            to="/"
+            className="font-medium text-[14px] md:text-base text-primary uppercase whitespace-nowrap"
+          >
+            {item}
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+
+  <IoChevronForward className="text-xl text-black md:hidden flex-shrink-0" />
+
+</div>
     </header>
   )
 }
