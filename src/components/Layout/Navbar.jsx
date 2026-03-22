@@ -47,7 +47,7 @@ const Navbar = () => {
             </div>
          </div>
         </nav>
-        <div className="container flex items-center justify-between pb-2.5 border-b border-b-[#EFEEEE]">
+        <div className="container flex items-center justify-center pb-2.5 border-b border-b-[#EFEEEE]">
 
   <ul className="flex gap-[18px] md:gap-14 whitespace-nowrap overflow-x-auto">
     {

@@ -3,6 +3,7 @@
 @import "slick-carousel/slick/slick.css";
 
 
+
 @theme{
   --color-primary: #383838;
   --color-secondary: #394146;
@@ -21,4 +22,12 @@ body{
 
 .slick-dots .slick-active button{
   @apply w-5.5 md:w-8
+}
+
+.sub_head{
+  @apply text-[26px] font-bold text-primary
+}
+
+.view{
+  @apply text-[16px] font-semibold text-secondary
 }
