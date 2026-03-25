@@ -6,7 +6,7 @@ import { FaClockRotateLeft } from 'react-icons/fa6'
 const Services = () => {
   return (
     <section className='py-[50px] px-[50px]'>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-[99px]">
+        <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[99px]">
             <div className='flex gap-[18px] items-center'>
                 <CiDeliveryTruck className='text-6xl text-[#0198E9]'/>
                 <div className="div">
