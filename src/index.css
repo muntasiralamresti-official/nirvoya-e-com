@@ -8,20 +8,28 @@
   --color-primary: #383838;
   --color-secondary: #394146;
   --color-brand: #0198E9;
- --background-image-badge: linear-gradient(90deg, rgba(255, 122, 0, 1) 0%, rgba(255, 184, 0, 1) 50%) ;
+  --background-image-badge: linear-gradient(90deg, rgba(255, 122, 0, 1) 0%, rgba(255, 184, 0, 1) 50%) ;
 }
 
 @utility container{
   margin: auto;
   padding: 0 20px;
 }
+@utility py-13{
+  padding-top-bottom : 50px;
+}
 
 body{
   font-family: "Poppins", sans-serif;
+  background-color: #FAFAFA;
 }
 
 .slick-dots .slick-active button{
   @apply w-5.5 md:w-8
+}
+
+.button-arrow {
+   @apply text-brand
 }
 
 .sub_head{

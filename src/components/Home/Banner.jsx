@@ -3,26 +3,28 @@ import { Link } from 'react-router';
 import Slider from "react-slick";
 
 const Banner = () => {
-  const settings = {
-    dots: true,
-    slidesToShow: 1,
-    arrows: false,
-    appendDots: dots => (
-      <div>
-        <ul className='flex gap-2 absolute bottom-6.5 left-1/2 -translate-x-1/2 '> {dots} </ul>
-      </div>
-    ),
-    customPaging: i => (
-      <div>
-        <button className='w-2 h-2 md:w-3 md:h-3 rounded-full bg-brand gap-2'></button>
-      </div>
-    )
-  };
+const settings = {
+  dots: true, 
+  slidesToShow: 1, 
+  arrows: false,
+  appendDots: dots => (
+    <div>
+      <ul className='flex gap-2 absolute bottom-6.5 left-1/2 -translate-x-1/2'>
+        {dots}
+      </ul>
+    </div>
+  ),
+  customPaging: i => (
+    <div>
+      <button className='w-2 h-2 md:w-3 md:h-3 rounded-full bg-brand'></button>
+    </div>
+  )
+};
 
 
   return (
-    <section className='pt-[12px] pb-[50px]'>
-      <div className="container flex gap-[27px]">
+    <section className='pt-3 pb-13'>
+      <div className="container flex gap-7">
         <div className='w-full md:w-[66%]'>
 
             <Slider {...settings}>

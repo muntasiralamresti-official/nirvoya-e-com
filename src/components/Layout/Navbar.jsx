@@ -40,7 +40,7 @@ const Navbar = () => {
             {/* Button */}
             <div className='flex gap-5 md:gap-10 order-2 md:order-3 text-nowrap'>
 
-                <Link to='/login' className='flex gap-1.5 font-normal text-base items-center'><FaRegUser className='text-xl'/>  <span className='hidden md:block'>Login</span> </Link>
+                <Link to='login' className='flex gap-1.5 font-normal text-base items-center'><FaRegUser className='text-xl'/>  <span className='hidden md:block'>Login</span> </Link>
                 <Link to='/login' className='flex gap-1.5 font-normal text-base items-center'><FaRegHeart className='text-xl'/>  <span className='hidden md:block'>Wishlist</span> </Link>
                 <Link to='/login' className='flex gap-1.5 font-normal text-base items-center'><FaBasketShopping className='text-xl'/> <span className='hidden md:block'>My Cart</span>  <span className='w-5 h-5 bg-red-500 flex items-center justify-center rounded-full text-white text-[12px]'>1</span></Link>
 
@@ -49,7 +49,7 @@ const Navbar = () => {
         </nav>
         <div className="container flex items-center justify-center pb-2.5 border-b border-b-[#EFEEEE]">
 
-  <ul className="flex gap-[18px] md:gap-14 whitespace-nowrap overflow-x-auto">
+  <ul className="flex gap-4.5 md:gap-14 whitespace-nowrap overflow-x-auto">
     {
       catagories.map((item, i) => (
         <li key={i}>
@@ -64,7 +64,7 @@ const Navbar = () => {
     }
   </ul>
 
-  <IoChevronForward className="text-xl text-black md:hidden flex-shrink-0" />
+  <IoChevronForward className="text-xl text-black md:hidden shrink-0" />
 
 </div>
     </header>

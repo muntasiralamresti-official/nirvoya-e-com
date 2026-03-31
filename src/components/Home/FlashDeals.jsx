@@ -5,7 +5,7 @@ import ProductCard from '../UI/ProductCard'
 
 const FlashDeals = () => {
   return (
-    <section className='pb-[50px]'>
+    <section className='pb-13'>
       <div className="container">
         <div className='flex justify-between'>
           <h3 className='sub_head text-[#2E2E2E]'>Flash Deals</h3>
