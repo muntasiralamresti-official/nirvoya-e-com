@@ -2,8 +2,8 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="min-h-screen bg-[#f5f7fb] flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-md p-8">
+    <div className="min-h-screen flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-white rounded-2xl border-primary border-2 p-8">
         
         {/* Logo / Title */}
         <div className="text-center mb-6">
@@ -66,9 +66,11 @@ const Login = () => {
         {/* Social Login */}
         <div className="space-y-3">
           <button className="w-full border border-gray-200 py-2 rounded-lg hover:bg-gray-50">
+
             Continue with Google
           </button>
           <button className="w-full border border-gray-200 py-2 rounded-lg hover:bg-gray-50">
+            
             Continue with Facebook
           </button>
         </div>

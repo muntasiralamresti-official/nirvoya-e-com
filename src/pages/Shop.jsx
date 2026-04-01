@@ -20,12 +20,41 @@ const Shop = () => {
         label:"Oldest Item"
     }
 ]
+  const categories = [
+      
+        {
+            title: "Men Fashion",
+        },
+        {
+            title: "Kids Fashion",
+        },
+        {
+            title: "Groceries",
+        },
+        {
+            title: "Women’s Fashion",
+        }
+    ]
   return (
     <main className='py-13'>
-        <div className="container grid grid-cols-12">
+        <div className="container grid grid-cols-12 gap-12">
             {/* SideBar */}
-            <div className='col-span-3'>
-                Side Bar
+            <div className='col-span-3 bg-white py-6 px-5 h-fit sticky top-0 left-0'>
+                 <h3 className='text-lg font-medium text-primary'>Related Categories</h3>
+                    <div className='space-y-1.5'>
+                        {
+                            categories.map((item) => (
+                                <Link to="/shop" key={item.title} className='block text-base text-secondary'>
+                                    {item.title}
+                                </Link>
+                            ))
+                        }
+                    </div>
+                    <div className='py-6 my-6 border-y-2 border-y-secondary/10'>
+                        <h3 className='text-lg font-medium text-primary'>Filter by Price</h3>
+                        <input type="range" name="" id="" className='w-full my-6'/>
+                        <p>Price: ৳1000 - ৳2500 </p>
+                    </div>
             </div>
 
             {/* Card */}
