@@ -15,6 +15,7 @@ const Button = ({
 
   const variants = {
     primary: "bg-brand text-white ",
+    
   };
 
   return (

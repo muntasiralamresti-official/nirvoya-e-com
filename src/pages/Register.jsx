@@ -10,7 +10,7 @@ const Register = () => {
         {/* Title */}
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800">Create Account 🚀</h1>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-secondary">
             Join Nirvoya and start shopping
           </p>
         </div>
@@ -20,41 +20,41 @@ const Register = () => {
 
           {/* Name */}
           <div>
-            <label className="text-sm text-gray-600">Full Name</label>
+            <label className="text-sm text-secondary">Full Name</label>
             <input
               type="text"
               placeholder="Enter your name"
-              className="w-full mt-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="text-sm text-gray-600">Email</label>
+            <label className="text-sm text-secondary">Email</label>
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full mt-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
 
           {/* Password */}
           <div>
-            <label className="text-sm text-gray-600">Password</label>
+            <label className="text-sm text-secondary">Password</label>
             <input
               type="password"
               placeholder="Create password"
-              className="w-full mt-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
 
           {/* Confirm Password */}
           <div>
-            <label className="text-sm text-gray-600">Confirm Password</label>
+            <label className="text-sm text-secondary">Confirm Password</label>
             <input
               type="password"
               placeholder="Confirm password"
-              className="w-full mt-1 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
 
@@ -62,25 +62,25 @@ const Register = () => {
           <Link to="/">
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300"
+            className="w-full bg-brand text-white py-2 rounded-lg hover:bg-brandtransition duration-300"
           >
             Sign Up
           </button>
           </Link>
 
           <div className="flex items-center gap-2 my-3">
-          <div className="flex-1 h- bg-gray-200"></div>
-          <span className="text-xs text-gray-400">OR</span>
-          <div className="flex-1 h- bg-gray-200"></div>
+          <div className="flex-1 h- bg-secondary/20"></div>
+          <span className="text-xs text-secondary">OR</span>
+          <div className="flex-1 h- bg-secondary/20"></div>
         </div>
 
         {/* Social Login */}
         <Link to='/' className="space-y-3">
-          <button className="w-full border border-gray-200 py-2 rounded-lg hover:bg-gray-50 flex items-center justify-center gap-2">
+          <button className="w-full border border-secondary/30 py-2 rounded-lg hover:bg-secondary/10 flex items-center justify-center gap-2">
             <img src="/google.png" alt="" className="w-8 h-8" />
             Continue with Google
           </button>
-          <button className="w-full border border-gray-200 py-2 rounded-lg hover:bg-gray-50 flex items-center justify-center gap-2">
+          <button className="w-full border border-secondary/30 py-2 rounded-lg hover:bg-secondary/10 flex items-center justify-center gap-2">
             <img src="/facebook.png" alt="" className="w-8 h-8" />
             Continue with Facebook
           </button>
@@ -91,10 +91,10 @@ const Register = () => {
         </form>
 
         {/* Footer */}
-        <p className="text-center text-sm text-gray-500 mt-6">
+        <p className="text-center text-sm text-secondary mt-6">
           Already have an account?{" "}
           <Link to="/login">
-            <span className="text-blue-500 hover:underline">Login</span>
+            <span className="text-brand hover:underline">Login</span>
           </Link>
         </p>
       </div>

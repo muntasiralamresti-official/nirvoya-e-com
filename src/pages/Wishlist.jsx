@@ -10,10 +10,10 @@ const Wishlist = () => {
     <section heart={<FaHeart className='text-red-600'/>} className="container bg-[#f5f7fb] py-10">
       
       <div >
-        <h1 className="text-2xl font-bold text-primary flex items-center pb-3">
+        <h1 className="text-2xl font-bold text-primary flex items-center pb-2">
           My Wishlist
         </h1>
-        <p className="text-sm text-gray-500 pb-3">
+        <p className="text-sm text-secondary pb-3">
           Your saved favorite items
         </p>
       </div>

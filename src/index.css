@@ -18,6 +18,9 @@
 @utility py-13{
   padding-top-bottom : 50px;
 }
+@utility text-26{
+  font-size: 26px;
+}
 
 body{
   font-family: "Poppins", sans-serif;

@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Forget from './pages/Forget'
 import Register from './pages/Register'
 import Wishlist from './pages/Wishlist'
+import ProductDetails from './pages/ProductDetails'
 
 const App = () => {
   return (
@@ -14,11 +15,12 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Layout />}> 
           <Route index element={<Home/>} />
-          <Route path="Shop" element={<Shop/>} />
-          <Route path="Login" element={<Login/>} />
-          <Route path="Register" element={<Register/>} />
-          <Route path="Forget" element={<Forget />} />
-          <Route path="Wishlist" element={<Wishlist />} />
+          <Route path="/Shop" element={<Shop/>} />
+          <Route path="/Shop/:id" element={<ProductDetails/>} />
+          <Route path="/Login" element={<Login/>} />
+          <Route path="/Register" element={<Register/>} />
+          <Route path="/Forget" element={<Forget />} />
+          <Route path="/Wishlist" element={<Wishlist />} />
 
         </Route >
       </Routes>

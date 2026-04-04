@@ -71,7 +71,7 @@ const Shop = () => {
                     </div>
 
                 </div>
-                <div className='pt-5 grid grid-cols-3 gap-6'>
+                <Link to='/' className='pt-5 grid grid-cols-3 gap-6'>
                     <ProductCard head="Headrest Executive Mesh Office Chairset" img="Features-1.png" price="৳10500"/>
                     <ProductCard head="Women fashion dress set" img="Features-2.png" price="৳1000"/>
                     <ProductCard head="Headrest Executive Mesh Office Chairset" img="Features-3.png" price="৳5000"/>
@@ -84,7 +84,7 @@ const Shop = () => {
                     <ProductCard head="Women fashion dress set" img="Features-10.png" price="৳1000"/>
                     <ProductCard head="Headrest Executive Mesh Office Chairset" img="Features-11.png" price="৳5000"/>
                     <ProductCard head="Women black dress and red hat collectio0" img="Features-12.png" price="৳1000"/>
-                </div>
+                </Link>
                 <Link to="Shop" className='flex items-center justify-end gap-4 pt-10'>
                    <Button className='bg-white button-arrow  shadow flex items-center'>
                     <MdArrowBackIos />
