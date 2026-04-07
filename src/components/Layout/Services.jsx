@@ -2,10 +2,11 @@ import React from 'react'
 import { CiDeliveryTruck } from 'react-icons/ci'
 import { FaRegCreditCard, FaStar } from 'react-icons/fa'
 import { FaClockRotateLeft } from 'react-icons/fa6'
+import Button from '../UI/Button'
 
 const Services = () => {
   return (
-    <section className='pt-13 bg-white'>
+    <section className='pt-13 bg-white '>
         <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
             <div className='flex gap-4.5 items-center justify-center'>
                 <CiDeliveryTruck className='text-6xl text-brand'/>

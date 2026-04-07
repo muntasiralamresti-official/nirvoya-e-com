@@ -1,15 +1,17 @@
-
 import React from "react";
 import { Link } from "react-router";
+import Input from "../components/UI/Input";
+import Button from "../components/UI/Button";
 
 const Register = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 my-10">
+    <div className="min-h-screen flex items-center justify-center px-4 bg-badge-secondary">
       <div className="w-full max-w-md bg-white rounded-2xl border-primary border-2 p-8">
-
         {/* Title */}
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-gray-800">Create Account 🚀</h1>
+          <h1 className="text-2xl font-bold text-gray-800">
+            Create Account 🚀
+          </h1>
           <p className="text-sm text-secondary">
             Join Nirvoya and start shopping
           </p>
@@ -17,13 +19,12 @@ const Register = () => {
 
         {/* Form */}
         <form className="space-y-4">
-
           {/* Name */}
           <div>
             <label className="text-sm text-secondary">Full Name</label>
-            <input
+            <Input
               type="text"
-              placeholder="Enter your name"
+              placeholder="Enter your Name"
               className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
@@ -31,9 +32,9 @@ const Register = () => {
           {/* Email */}
           <div>
             <label className="text-sm text-secondary">Email</label>
-            <input
+            <Input
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter your Email"
               className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
@@ -41,9 +42,9 @@ const Register = () => {
           {/* Password */}
           <div>
             <label className="text-sm text-secondary">Password</label>
-            <input
+            <Input
               type="password"
-              placeholder="Create password"
+              placeholder="Enter your Password"
               className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
@@ -51,43 +52,40 @@ const Register = () => {
           {/* Confirm Password */}
           <div>
             <label className="text-sm text-secondary">Confirm Password</label>
-            <input
+            <Input
               type="password"
-              placeholder="Confirm password"
+              placeholder="Enter your Password"
               className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
             />
           </div>
 
           {/* Button */}
           <Link to="/">
-          <button
-            type="submit"
-            className="w-full bg-brand text-white py-2 rounded-lg hover:bg-brandtransition duration-300"
-          >
-            Sign Up
-          </button>
+            <Button
+              type="submit"
+              className="w-full bg-brand text-white py-2 rounded-lg hover:bg-brandtransition duration-300"
+            >
+              Sign Up
+            </Button>
           </Link>
 
           <div className="flex items-center gap-2 my-3">
-          <div className="flex-1 h- bg-secondary/20"></div>
-          <span className="text-xs text-secondary">OR</span>
-          <div className="flex-1 h- bg-secondary/20"></div>
-        </div>
+            <div className="flex-1 h- bg-secondary/20"></div>
+            <span className="text-xs text-secondary">OR</span>
+            <div className="flex-1 h- bg-secondary/20"></div>
+          </div>
 
-        {/* Social Login */}
-        <Link to='/' className="space-y-3">
-          <button className="w-full border border-secondary/30 py-2 rounded-lg hover:bg-secondary/10 flex items-center justify-center gap-2">
-            <img src="/google.png" alt="" className="w-8 h-8" />
-            Continue with Google
-          </button>
-          <button className="w-full border border-secondary/30 py-2 rounded-lg hover:bg-secondary/10 flex items-center justify-center gap-2">
-            <img src="/facebook.png" alt="" className="w-8 h-8" />
-            Continue with Facebook
-          </button>
-        </Link>
-
-
-
+          {/* Social Login */}
+          <Link to="/" className="space-y-3">
+            <Button className="w-full border border-secondary/30 py-2 rounded-lg  flex items-center justify-center gap-2">
+              <img src="/google.png" alt="" className="w-8 h-8" />
+              Continue with Google
+            </Button>
+            <Button className="w-full border border-secondary/30 py-2 rounded-lg  flex items-center justify-center gap-2">
+              <img src="/facebook.png" alt="" className="w-8 h-8" />
+              Continue with Facebook
+            </Button>
+          </Link>
         </form>
 
         {/* Footer */}

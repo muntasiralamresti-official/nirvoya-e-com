@@ -1,9 +1,11 @@
 import React from "react";
 import { Link, Links } from "react-router";
+import Input from "../components/UI/Input";
+import Button from "../components/UI/Button";
 
 const Login = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-4 bg-badge-secondary">
       <div className="w-full max-w-md bg-white rounded-2xl border-primary border-2 p-8">
         
         {/* Logo / Title */}
@@ -20,45 +22,34 @@ const Login = () => {
           {/* Email */}
           <div>
             <label className="text-sm text-secondary">Email</label>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
-            />
+           <Input type="email" placeholder="Enter your Email" className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"/>
+            
           </div>
-
           {/* Password */}
           <div>
             <label className="text-sm text-secondary">Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"
-            />
+            <Input type="email" placeholder="Enter your Password" className="w-full mt-1 px-4 py-2 border border-secondary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand"/>
           </div>
 
           {/* Options */}
           
-          <Link to='/Forget'>
-          <div className="flex items-center justify-between text-sm pb-5">
+          
+          <div className="flex items-center justify-between text-sm pb-1">
             <label className="flex items-center gap-2 text-secondary">
               <input type="checkbox" className="accent-brand" />
               Remember me
             </label>
+            <Link to='/Forget'>
             <a href="#" className="text-brand hover:underline">
               Forgot Password?
             </a>
+            </Link>
           </div>
-          </Link>
+          
 
           {/* Button */}
           <Link to='/' >
-          <button
-            type="submit"
-            className="w-full bg-brand text-white py-2 rounded-lg hover:bg-brandtransition duration-300"
-          >
-            Login
-          </button>
+          <Button type="submit" className="w-full bg-brand text-white py-2 rounded-lg hover:bg-brandtransition duration-300">Login</Button>
           </Link>
         </form>
 
@@ -71,14 +62,14 @@ const Login = () => {
 
         {/* Social Login */}
         <Link to='/' className="space-y-3">
-          <button className="w-full border border-secondary/30 py-2 rounded-lg hover:bg-secondary/10 flex items-center justify-center gap-2">
+          <Button className="w-full border border-secondary/30 py-2 rounded-lg  flex items-center justify-center gap-2">
             <img src="/google.png" alt="" className="w-8 h-8" />
             Continue with Google
-          </button>
-          <button className="w-full border border-secondary/30 py-2 rounded-lg hover:bg-secondary/10 flex items-center justify-center gap-2">
+          </Button>
+          <Button className="w-full border border-secondary/30 py-2 rounded-lg  flex items-center justify-center gap-2">
             <img src="/facebook.png" alt="" className="w-8 h-8" />
             Continue with Facebook
-          </button>
+          </Button>
         </Link>
 
         {/* Footer */}
@@ -92,6 +83,7 @@ const Login = () => {
         </p>
       </div>
     </div>
+    
   );
 };
 

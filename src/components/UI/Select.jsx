@@ -12,7 +12,7 @@ const Select = ({
   return (
     <div className="w-full">
       {label && (
-        <label className="inline-block mb-1 text-sm font-medium text-gray-700">
+        <label className="inline-block mb-1 text-sm font-medium text-secondary">
           {label}
         </label>
       )}
@@ -23,7 +23,7 @@ const Select = ({
         className={`w-full px-4 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-brand 
         ${error ? "border-red-500" : "border-gray-300"} ${className}`}
       >
-        <option  disabled hidden>
+        <option disabled hidden>
           {placeholder}
         </option>
 
@@ -34,9 +34,7 @@ const Select = ({
         ))}
       </select>
 
-      {error && (
-        <p className="mt-1 text-sm text-red-500">{error}</p>
-      )}
+      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
     </div>
   );
 };
