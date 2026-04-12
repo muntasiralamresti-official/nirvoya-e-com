@@ -14,8 +14,13 @@ const Apitest = () => {
 
   useEffect (() => {
     (async () => {
-      const comm = await axios.get("https://jsonplaceholder.typicode.com/comments");
+      try {
+        const comm = await axios.get("https://jsonplaceholder.typicode.com/comments");
       console.log(comm.data);
+      } catch (fah) {
+        console.log(fah);
+        
+      }
       })(); 
   },[]) ;
 
