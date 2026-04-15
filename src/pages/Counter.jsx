@@ -1,4 +1,3 @@
-// src/pages/Counter.jsx
 import React from "react";
 import { useSelector } from "react-redux";
 import IncrementButton from "../components/UI/IncrementButton";
