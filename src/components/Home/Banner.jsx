@@ -4,9 +4,12 @@ import Slider from "react-slick";
 
 const Banner = () => {
 const settings = {
-  dots: true, 
-  slidesToShow: 1, 
-  arrows: false,
+    dots: true,
+    slidesToShow: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+
   appendDots: dots => (
     <div>
       <ul className='flex gap-2 absolute bottom-6.5 left-1/2 -translate-x-1/2'>
