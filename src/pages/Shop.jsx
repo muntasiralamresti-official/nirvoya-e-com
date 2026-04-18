@@ -82,7 +82,7 @@ const Shop = () => {
           <div className="flex justify-between items-center">
             <p className="text-medium text-secondary/50">
               {" "}
-              Showing <span className="text-primary text-lg"> 20 </span> of{" "}
+              Showing <span className="text-primary text-lg"> 30 </span> of{" "}
               <span className="text-primary text-lg"> 160 </span> product{" "}
             </p>
             <div className="flex items-center gap-3 w-fit">
@@ -92,74 +92,35 @@ const Shop = () => {
               <Select className="max-w-44" options={Sortoption} />
             </div>
           </div>
-          <Link to="/" className="pt-5 grid grid-cols-3 gap-6">
-            {isLoading ? (
-              <p>Loading products...</p>
-            ) : (
-              data?.products?.map((item) => (
-                // <ProductCard key={item.id} data={item} />
-                <ProductCard head={item.title} img={item.thumbnail} price={item.price} key={item.id}/>
-              ))
-            )}
 
 
-            {/* <ProductCard head="Headrest Executive Mesh Office Chairset" img="Features-1.png" price="৳10500" />
-            <ProductCard
-              head="Women fashion dress set"
-              img="Features-2.png"
-              price="৳1000"
-            />
-            <ProductCard
-              head="Headrest Executive Mesh Office Chairset"
-              img="Features-3.png"
-              price="৳5000"
-            />
-            <ProductCard
-              head="Headrest Executive Mesh Office Chairset"
-              img="Features-4.png"
-              price="৳1000"
-            />
-            <ProductCard
-              head="Headrest Executive Mesh Office Chairset"
-              img="Features-5.png"
-              price="৳10500"
-            />
-            <ProductCard
-              head="Women fashion dress set"
-              img="Features-6.png"
-              price="৳1000"
-            />
-            <ProductCard
-              head="Headrest Executive Mesh Office Chairset"
-              img="Features-7.png"
-              price="৳5000"
-            />
-            <ProductCard
-              head="Women primarydress and red hat collectio0"
-              img="Features-8.png"
-              price="৳1000"
-            />
-            <ProductCard
-              head="Headrest Executive Mesh Office Chairset"
-              img="Features-9.png"
-              price="৳10500"
-            />
-            <ProductCard
-              head="Women fashion dress set"
-              img="Features-10.png"
-              price="৳1000"
-            />
-            <ProductCard
-              head="Headrest Executive Mesh Office Chairset"
-              img="Features-11.png"
-              price="৳5000"
-            />
-            <ProductCard
-              head="Women primarydress and red hat collectio0"
-              img="Features-12.png"
-              price="৳1000"
-            /> */}
-          </Link>
+          <Link to="/" className="pt-5 grid grid-cols-3 gap-6 min-h-screen">
+              {isLoading ? (
+                <div className="col-span-3 flex justify-center items-center">
+      
+                  <div className="flex flex-col gap-4 items-center justify-center">
+        
+                    <div className="w-20 h-20 border-4 border-transparent border-t-brand rounded-full animate-spin flex items-center justify-center">
+          
+                      <div className="w-14 h-14 border-4 border-transparent border-t-red-400 rounded-full animate-spin"></div>
+        
+                    </div>
+
+                    <p className="text-secondary text-xl">Loading products...</p>
+
+                  </div>
+
+                </div>
+              ) : (
+                data?.products?.map((item) => (
+                  <ProductCard key={item.id} head={item.title} img={item.thumbnail} price={item.price} />
+                ))
+              )}
+            </Link>
+
+
+
+
           <Link to="Shop" className="flex items-center justify-end gap-4 pt-10">
             <Button className="bg-white button-arrow  shadow flex items-center">
               <MdArrowBackIos />
