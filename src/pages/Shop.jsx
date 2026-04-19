@@ -6,6 +6,7 @@ import { Link } from "react-router";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { FaChevronDown } from "react-icons/fa";
 import { useGetProductsQuery } from "../Services/Api";
+import Error from "../components/UI/Error";
 
 const Shop = () => {
   const { data, isLoading, error } = useGetProductsQuery();
@@ -111,7 +112,11 @@ const Shop = () => {
                   </div>
 
                 </div>
-              ) : (
+              ) : error ? (
+                 <div className="col-span-3 flex justify-center items-center">
+                   <Error />
+                 </div>
+               ) : (
                 data?.products?.map((item) => (
                   <ProductCard key={item.id} head={item.title} img={item.thumbnail} price={item.price} />
                 ))
