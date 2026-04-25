@@ -14,7 +14,7 @@ const Category = () => {
             <Link
               to={`/Shop?category=${item}`}
               key={item}
-              className="p-4 shadow flex items-center  rounded-xl justify-center bg-brand/25 capitalize "
+              className="p-4 shadow flex items-center  rounded-xl justify-center bg-brand/10 capitalize "
             >
               <div className="flex gap-2.5 items-center">
                 <p className="font-medium text-primary text-xl">{item}</p>

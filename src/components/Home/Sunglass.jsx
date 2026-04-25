@@ -48,6 +48,7 @@ const Sunglass = () => {
                   img={item.thumbnail}
                   price={item.price}
                   discount={item.discountPercentage}
+                  rating={item.rating}
                 />
               </Link>
             ))}

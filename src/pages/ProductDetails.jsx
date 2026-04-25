@@ -13,6 +13,7 @@ import { useGetProductDetailsQuery } from "../Services/Api";
 const ProductDetails = () => {
   const {id} = useParams();
   const { data } = useGetProductDetailsQuery(id);
+  const [liked, setLiked] = useState(false);
 
   const [selectedSize, setSelectedSize] = useState("xl");
   const [nav1, setNav1] = useState(null);
@@ -124,13 +125,14 @@ const ProductDetails = () => {
             <div className="flex gap-3 pt-5 pb-8 items-center">
               <div className="flex items-center gap-1  ">
                 <span className="text-secondary ">{data?.rating}</span>
+                {[...Array(5)].map((_, i) => (
+                   i < Math.round(data?.rating)
+                     ? <IoStar key={i} className="text-yellow-400 text-xl" />
+                     : <IoStarSharp key={i} className="text-gray-300 text-xl" />
+                 ))}
 
-                <IoStar className="text-2xl text-yellow-400" />
-                <IoStar className="text-2xl text-yellow-400" />
-                <IoStar className="text-2xl text-yellow-400" />
-                <IoStar className="text-2xl text-yellow-400" />
-                <IoStarSharp className="text-2xl text-gray-400" />
                 <span className="text-secondary">{data?.total}</span>
+                
               </div>
               <span className="text-secondary/20">|</span>
               {/* <div className="flex items-center gap-4">
@@ -140,8 +142,8 @@ const ProductDetails = () => {
                 </p>
               </div> */}
               {/* <span className="text-secondary/20">|</span> */}
-              <div className="flex items-center gap-4">
-                <FaHeart className="text-secondary/30" />
+              <div onClick={()=> setLiked(!liked)} className="flex items-center gap-4 cursor-pointer">
+                <FaHeart  className={liked ? "text-red-500" : "text-gray-400"} />
                 <p className="text-lg text-brand ">Add to wishlist</p>
               </div>
             </div>
@@ -247,62 +249,41 @@ const ProductDetails = () => {
         <div className="container">
           <div className="bg-white pt-5 border-b-3 border-b-secondary/10 pb-8">
             <h3 className="text-2xl text-brand font-medium pb-11">
-              Producr details of LED Monitor With High Quality In The World
+              Producr details of {data?.title}
             </h3>
             <h4 className="text-2xl text-primary font-bold pb-5 font-secondary">
-              See the best picture no matter where you sit
+              Everything You Need to Know About This Product
             </h4>
 
             <div className="flex justify-between pl-6 text-primary text-lg font-secondary">
               <ol className="list-disc">
-                <li>Size : M, L, XL</li>
-                <li>Product Type : Jogger</li>
-                <li>Main Material : Cotton</li>
-                <li>Gender : Male</li>
-                <li>Waist : Mid-rise</li>
-                <li>Zip : Fly</li>
+                <li><b>Availability:</b> {data?.availabilityStatus}</li>
+                <li><b>Minimum Order:</b> {data?.minimumOrderQuantity}</li>
+                <li><b>Warranty:</b> {data?.warrantyInformation}</li>
               </ol>
               <ol className="list-disc">
-                <li>Zipper : Yes</li>
-                <li>Pocket : Two front and One Back Pockets.</li>
-                <li>100% Authentic Product</li>
-                <li>
-                  Product color may slightly vary due to our photography and
-                  Sometimes it’s vary on our devices
-                </li>
+                <li><b>Shipping:</b> {data?.shippingInformation}</li>
+                <li><b>Return Policy:</b> {data?.returnPolicy}</li>
               </ol>
             </div>
           </div>
           <h4 className="text-2xl text-primary font-bold py-5 font-secondary">
-            Powerful intelligence for perfection
+            Built with Quality & Precision
           </h4>
           <p className="text-lg text-secondary pb-6 font-secondary">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-            pariatur?
+            {data?.description}
           </p>
-          <p className="text-lg text-secondary pb-5 font-secondary">
+          {/* <p className="text-lg text-secondary pb-5 font-secondary">
             At vero eos et accusamus et iusto odio dignissimos ducimus qui
             blanditiis praesentium voluptatum deleniti atque corrupti quos
             dolores et quas molestias excepturi sint occaecati cupiditate non
             provident, similique sunt in culpa qui officia deserunt mollitia
             animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis
             est et expedita{" "}
-          </p>
+          </p> */}
         </div>
       </section>
-      <Testimonials />
+      <Testimonials reviews={data?.reviews} />
     </>
   );
 };

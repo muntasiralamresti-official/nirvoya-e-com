@@ -1,84 +1,57 @@
 import React from "react";
 import { IoStar } from "react-icons/io5";
+import { CiStar } from "react-icons/ci";
 
-const Reviews = () => {
-  const reviews = [
-    {
-      id: 1,
-      name: "Vanille",
-      rating: 5,
-      time: "1 Month Ago",
-      image: "/rev-1.jpg",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 2,
-      name: "Maduin",
-      rating: 5,
-      time: "1 Month Ago",
-      image: "/rev-2.jpg",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 3,
-      name: "Samantha",
-      rating: 5,
-      time: "1 Month Ago",
-      image: "/rev-3.jpg",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      id: 4,
-      name: "Roveria",
-      rating: 5,
-      time: "1 Month Ago",
-      image: "/rev-4.jpg",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
-
+const Reviews = ({ reviews }) => {
   return (
-    <section className=" pb-10">
+    <section className="pb-10">
       <div className="container pl-0 space-y-8">
-        {reviews.map((review) => (
-          <div key={review.id}>
+
+        {reviews?.map((review, index) => (
+          <div key={index}>
             <div className="flex">
-              {/* Image */}
-              <img
-                src={review.image}
-                alt={review.name}
-                className="w-14 h-14 object-cover"
-              />
+
+              {/* Avatar (auto generate 🔥) */}
+              <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center text-xl font-bold text-gray-600">
+                {review.reviewerName?.charAt(0)}
+              </div>
 
               {/* Content */}
               <div className="pl-4">
                 <h4 className="text-primary font-medium text-lg">
-                  {review.name}
+                  {review.reviewerName}
                 </h4>
 
                 {/* Rating */}
                 <div className="flex items-center gap-4 mt-1">
                   <span className="text-secondary text-lg font-medium">
-                    5.0
+                    {review.rating}.0
                   </span>
 
                   <div className="flex gap-1 text-yellow-400">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <IoStar key={i} />
-                    ))}
+                    {[...Array(5)].map((_, i) =>
+                      i < review.rating ? (
+                        <IoStar key={i} />
+                      ) : (
+                        <CiStar key={i} className="text-gray-300" />
+                      )
+                    )}
                   </div>
 
                   <span className="text-secondary/80 text-lg">
-                    {review.time}
+                    {new Date(review.date).toLocaleDateString()}
                   </span>
                 </div>
-
-                {/* Text */}
               </div>
             </div>
-            <p className="text-secondary/80 mt-6 text-lg">{review.text}</p>
+
+            {/* Comment */}
+            <p className="text-secondary/80 mt-6 text-lg">
+              {review.comment}
+            </p>
           </div>
         ))}
+
       </div>
     </section>
   );
