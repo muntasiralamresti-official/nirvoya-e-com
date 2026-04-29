@@ -1,74 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { FaHeart, FaTrash } from "react-icons/fa";
 import ProductCard from "../components/UI/ProductCard";
+import Loading from "../components/UI/Loading";
+import { getWishlist, removeFromWishlist } from "../Services/wishlist";
+// import { getWishlist, removeFromWishlist } from "../utils/wishlist";
 
 const Wishlist = () => {
+  const [wishlist, setWishlist] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const data = getWishlist();
+    setWishlist(data);
+    setLoading(false);
+  }, []);
+
   return (
-    <section
-      heart={<FaHeart className="text-red-600" />}
-      className="container bg-[#f5f7fb] py-10"
-    >
+    <section className="container bg-[#f5f7fb] py-10">
       <div>
-        <h1 className="text-2xl font-bold text-primary flex items-center pb-2">
-          My Wishlist
+        <h1 className="text-2xl font-bold flex items-center gap-2">
+          <FaHeart className="text-red-500" /> My Wishlist
         </h1>
-        <p className="text-lg text-secondary pb-3">Your saved favorite items</p>
       </div>
 
-      <Link
-        to="/Shop"
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-5 gap-1 md:gap-6"
-      >
-        <ProductCard
-          head="Headrest Executive Mesh Office Chairset"
-          img="Features-1.png"
-          price="৳10500"
-          heart={<FaHeart className="text-red-600" />}
-        />
-        <ProductCard
-          head="Women fashion dress set"
-          img="Features-2.png"
-          price="৳1000"
-          heart={<FaHeart className="text-red-600" />}
-        />
-        <ProductCard
-          head="Headrest Executive Mesh Office Chairset"
-          img="Features-3.png"
-          price="৳5000"
-          heart={<FaHeart className="text-red-600" />}
-        />
-        <ProductCard
-          head="Headrest Executive Mesh Office Chairset"
-          img="Features-4.png"
-          price="৳1000"
-          heart={<FaHeart className="text-red-600" />}
-        />
-        <ProductCard
-          head="Headrest Executive Mesh Office Chairset"
-          img="Features-5.png"
-          price="৳10500"
-          heart={<FaHeart className="text-red-600" />}
-        />
-        <ProductCard
-          head="Women fashion dress set"
-          img="Features-6.png"
-          price="৳1000"
-          heart={<FaHeart className="text-red-600" />}
-        />
-        <ProductCard
-          head="Headrest Executive Mesh Office Chairset"
-          img="Features-7.png"
-          price="৳5000"
-          heart={<FaHeart className="text-red-600" />}
-        />
-        <ProductCard
-          head="Women primarydress and red hat collectio0"
-          img="Features-8.png"
-          price="৳1000"
-          heart={<FaHeart className="text-red-600" />}
-        />
-      </Link>
+      <div className="grid grid-cols-4 gap-6 pt-6">
+        {loading ? (
+          <div className="col-span-full flex justify-center items-center h-[300px]">
+            <Loading />
+          </div>
+        ) : wishlist.length === 0 ? (
+          <p className="col-span-full text-center py-20">
+            No Wishlist Items 😢
+          </p>
+        ) : (
+          wishlist.map((item) => (
+            <div key={item.id} className="relative">
+              <Link to={`/shop/${item.id}`}>
+                <ProductCard
+                  head={item.title}
+                  img={item.thumbnail}
+                  price={item.price}
+                  rating={item.rating}
+                />
+              </Link>
+
+              {/* Delete */}
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  removeFromWishlist(item.id);
+                  setWishlist(getWishlist());
+                }}
+                className="absolute top-2 right-2 bg-white p-2 rounded-full shadow"
+              >
+                <FaTrash className="text-red-500" />
+              </button>
+            </div>
+          ))
+        )}
+      </div>
     </section>
   );
 };

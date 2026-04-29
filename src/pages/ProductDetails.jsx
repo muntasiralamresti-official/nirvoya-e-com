@@ -1,38 +1,62 @@
 import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import { NextArrow, PrevArrow } from "../components/ui/Arrows";
 import { IoChevronForward, IoStar, IoStarSharp } from "react-icons/io5";
-import { FaCheck, FaCheckCircle, FaHeart, FaStar } from "react-icons/fa";
-import { CiShoppingBasket, CiStar } from "react-icons/ci";
+import { FaHeart, FaCheckCircle } from "react-icons/fa";
 import Button from "../components/UI/Button";
 import { Link, useParams } from "react-router";
 import Testimonials from "../components/Home/Testimonials";
 import { useGetProductDetailsQuery } from "../Services/Api";
+import { addToWishlist, getWishlist } from "../Services/wishlist";
+// import { addToWishlist, getWishlist } from "../utils/wishlist";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { data } = useGetProductDetailsQuery(id);
-  const [liked, setLiked] = useState(false);
 
-  const [selectedSize, setSelectedSize] = useState("xl");
-  const [nav1, setNav1] = useState(null);
-  const [nav2, setNav2] = useState(null);
+  const [liked, setLiked] = useState(false);
   const [quantity, setQuantity] = useState(1);
+
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
+
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
 
   useEffect(() => {
     setNav1(sliderRef1);
     setNav2(sliderRef2);
   }, []);
 
-  const increaseQty = () => {
-    setQuantity((prev) => prev + 1);
-  };
+  useEffect(() => {
+    if (data) {
+      const wishlist = getWishlist();
+      const exists = wishlist.find((item) => item.id === data.id);
+      setLiked(!!exists);
+    }
+  }, [data]);
 
-  const decreaseQty = () => {
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  const increaseQty = () => {
+  setQuantity((prev) => {
+    if (prev < data?.stock) {
+      return prev + 1;
+    } else {
+      return prev;
+    }
+  });
+};
+  const decreaseQty = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
+  const handleWishlist = () => {
+    addToWishlist({
+      id: data.id,
+      title: data.title,
+      thumbnail: data.thumbnail,
+      price: data.price,
+      discountPercentage: data.discountPercentage,
+      rating: data.rating,
+    });
+    setLiked(true);
   };
 
   const settingsLarge = {
@@ -52,7 +76,6 @@ const ProductDetails = () => {
     prevArrow: <PrevArrow />,
   };
 
-  const SIZES = ["S", "M", "L", "X", "XL", "XXL"];
   return (
     <>
       <section className="py-14 ">
@@ -135,22 +158,17 @@ const ProductDetails = () => {
                 <span className="text-secondary">{data?.total}</span>
               </div>
               <span className="text-secondary/20">|</span>
-              {/* <div className="flex items-center gap-4">
-                <CiShoppingBasket className="text-primary text-3xl font-medium" />
-                <p className="text-base text-primary font-bold">
-                  {data?.stock} <span className="font-normalnormal">Stock</span>
-                </p>
-              </div> */}
-              {/* <span className="text-secondary/20">|</span> */}
+              
+
               <div
-                onClick={() => setLiked(!liked)}
-                className="flex items-center gap-4 cursor-pointer"
-              >
-                <FaHeart
-                  className={liked ? "text-red-500" : "text-secondary-400"}
-                />
-                <p className="text-lg text-brand ">Add to wishlist</p>
-              </div>
+              onClick={handleWishlist}
+              className="flex items-center gap-3 cursor-pointer pt-5"
+            >
+              <FaHeart
+                className={liked ? "text-red-500" : "text-gray-400"}
+              />
+              <span>Add to Wishlist</span>
+            </div>
             </div>
 
             {/* Price  */}
@@ -308,6 +326,7 @@ const ProductDetails = () => {
         </div>
       </section>
       <Testimonials reviews={data?.reviews} />
+    
     </>
   );
 };

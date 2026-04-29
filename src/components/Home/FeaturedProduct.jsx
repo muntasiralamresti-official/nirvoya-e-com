@@ -33,9 +33,12 @@ const FeaturedProduct = () => {
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 mt-5 gap-1 md:gap-6"
         >
           {isLoading ? (
+            <div className="col-span-full flex justify-center items-center">
             <Loading />
+            </div>
+            
           ) : error ? (
-            <div className="col-span-3 flex justify-center items-center">
+            <div className="col-span-full flex justify-center items-center">
               {/* <Error /> */}
             </div>
           ) : (

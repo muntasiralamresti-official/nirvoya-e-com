@@ -15,16 +15,16 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-          <Route path="/Login" element={<Login/>} />
-          <Route path="/Register" element={<Register/>} />
-          <Route path="/Forget" element={<Forget />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/forget" element={<Forget />} />
       
         <Route path='/' element={<Layout />}> 
           <Route index element={<Home/>} />
-          <Route path="/Shop" element={<Shop/>} />
-          <Route path="/My Cart" element={<MyCart/>} />
-          <Route path="/Shop/:id" element={<ProductDetails/>} />
-          <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/shop" element={<Shop/>} />
+          <Route path="/mycart" element={<MyCart/>} />
+          <Route path="/shop/:id" element={<ProductDetails/>} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/profile" element={<Profile />} />
 
         </Route >

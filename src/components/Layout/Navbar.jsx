@@ -7,8 +7,19 @@ import { FaRegHeart, FaRegUser } from "react-icons/fa";
 import { FaBasketShopping } from "react-icons/fa6";
 import { IoChevronForward } from "react-icons/io5";
 import SearchBox from "../UI/SearchBox";
+import { useGetCategoryListQuery } from "../../Services/Api";
+import { useRef } from "react";
 
 const Navbar = () => {
+const { data } = useGetCategoryListQuery();
+
+const [active, setActive] = useState(null);
+const [autoScroll, setAutoScroll] = useState(true);
+const scrollRef = useRef(null);
+const [direction, setDirection] = useState("right");
+
+
+  
   
   const [user, setUser] = useState(null);
 
@@ -17,21 +28,47 @@ const Navbar = () => {
     setUser(storedUser);
   }, []);
 
+  useEffect(() => {
+  if (!autoScroll) return;
+
+  const interval = setInterval(() => {
+    if (!scrollRef.current) return;
+
+    const el = scrollRef.current;
+
+    if (direction === "right") {
+      el.scrollLeft += 1;
+
+      if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+        setDirection("left"); // reverse
+      }
+    } else {
+      el.scrollLeft -= 1;
+
+      if (el.scrollLeft <= 0) {
+        setDirection("right"); // reverse again
+      }
+    }
+  }, 0);
+
+  return () => clearInterval(interval);
+}, [autoScroll, direction]);
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
   };
 
 
-  const catagories = [
-    "Women's Fashion",
-    "men's Fashion",
-    "Kid's Fashion",
-    "Home & Lifestyle",
-    "Arts & Crafts",
-    "Computer & Electronics",
-    "Food & Grocery",
-  ];
+  // const catagories = [
+  //   "Women's Fashion",
+  //   "men's Fashion",
+  //   "Kid's Fashion",
+  //   "Home & Lifestyle",
+  //   "Arts & Crafts",
+  //   "Computer & Electronics",
+  //   "Food & Grocery",
+  // ];
 
   return (
     <header>
@@ -94,21 +131,40 @@ const Navbar = () => {
         </div>
       </nav>
       <div className="container flex items-center justify-center pb-2.5 border-b border-b-[#EFEEEE]">
-        <ul className="flex gap-4.5 md:gap-14 whitespace-nowrap overflow-x-auto">
-          {catagories.map((item, i) => (
-            <li key={i}>
-              <Link
-                to="/"
-                className="font-medium text-[14px] md:text-base text-primary uppercase whitespace-nowrap"
-              >
-                {item}
-              </Link>
-            </li>
-          ))}
-        </ul>
 
-        <IoChevronForward className="text-xl text-primarymd:hidden shrink-0" />
-      </div>
+  <ul
+    ref={scrollRef}
+    className="flex gap-6 md:gap-14 whitespace-nowrap overflow-x-auto scroll-smooth"
+  >
+    {data?.map((item, i) => (
+      <li key={i}>
+        <Link
+          to={`/Shop?category=${item}`}
+          onClick={() => {
+            setActive(item);
+            setAutoScroll(false); // stop auto scroll
+          }}
+          className={`relative font-medium text-[14px] md:text-base uppercase whitespace-nowrap transition-all duration-300
+            ${
+              active === item
+                ? "text-blue-600"
+                : "text-primary hover:text-brand"
+            }
+          `}
+        >
+          {item}
+
+          {/* underline */}
+          {active === item && (
+            <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-blue-600"></span>
+          )}
+        </Link>
+      </li>
+    ))}
+  </ul>
+
+  <IoChevronForward className="text-xl text-primary md:hidden shrink-0" />
+</div>
     </header>
   );
 };

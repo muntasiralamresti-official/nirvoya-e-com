@@ -46,3 +46,7 @@ body{
 .view{
   @apply text-[16px] font-semibold text-secondary
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

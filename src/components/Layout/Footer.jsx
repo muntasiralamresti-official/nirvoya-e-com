@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
         <div className="copyright flex justify-center md:justify-between pb-5 md:pb-0">
           <p className="text-[#757575]">
-            Projectnirvoya - © 2021 All Rights Reserved
+            Zora Shop - © 2026 All Rights Reserved
           </p>
           <div className="flex items-center ">
             <h4 className="text-4.5 font-medium text-brand hidden md:block">

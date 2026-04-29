@@ -129,7 +129,7 @@ const Shop = () => {
       </Link>
     ))
   )}
-</div>
+          </div>
 
           <Pagination
             handleChange={(num) => setPageNumber(num)}
