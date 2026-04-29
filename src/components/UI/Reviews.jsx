@@ -10,7 +10,7 @@ const Reviews = ({ reviews }) => {
           <div key={index}>
             <div className="flex">
               {/* Avatar (auto generate 🔥) */}
-              <div className="w-14 h-14 rounded-full bg-secondary-200 flex items-center justify-center text-xl font-bold text-secondary-600">
+              <div className="w-14 h-14 rounded-full border-2 border-primary bg-brand/20 bg-secondary-200 flex items-center justify-center text-xl font-bold text-secondary-600">
                 {review.reviewerName?.charAt(0)}
               </div>
 

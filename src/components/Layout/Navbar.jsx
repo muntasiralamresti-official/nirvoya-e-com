@@ -96,7 +96,7 @@ const [direction, setDirection] = useState("right");
                 <div className="flex items-center gap-3">
 
                   <Link to="/profile" className="flex items-center gap-2">
-                    <img src={user.image} className="w-8 h-8 rounded-full" />
+                    <img src={user.image} className="w-8 h-8 rounded-full border-2 bg-brand/20" />
                     <span>{user.firstName}</span>
                   </Link>
 
@@ -111,14 +111,14 @@ const [direction, setDirection] = useState("right");
                     </Link>
               )}
             <Link
-              to="/Wishlist"
+              to="/wishlist"
               className="flex gap-1.5 font-normal text-base items-center"
             >
               <FaRegHeart className="text-xl" />{" "}
               <span className="hidden md:block">Wishlist</span>{" "}
             </Link>
             <Link
-              to="/MyCart"
+              to="/mycart"
               className="flex gap-1.5 font-normal text-base items-center"
             >
               <FaBasketShopping className="text-xl" />{" "}

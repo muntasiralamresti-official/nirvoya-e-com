@@ -34,7 +34,7 @@ const Profile = () => {
           <img
             src={user.image}
             alt="user"
-            className="w-20 h-20 rounded-full border"
+            className="w-20 h-20 rounded-full border bg-brand/20"
           />
           <div>
             <h2 className="text-xl font-semibold">

@@ -9,7 +9,7 @@ import Register from './pages/Register'
 import Wishlist from './pages/Wishlist'
 import ProductDetails from './pages/ProductDetails'
 import MyCart from './pages/MyCart'
-import Profile from './pages/profile'
+import Profile from './pages/Profile'
 
 const App = () => {
   return (
