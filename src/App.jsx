@@ -8,7 +8,6 @@ import Forget from "./pages/Forget";
 import Register from "./pages/Register";
 import Wishlist from "./pages/Wishlist";
 import ProductDetails from "./pages/ProductDetails";
-// import MyCart from './pages/MyCart'
 import Profile from "./pages/Profile";
 import MyCart from "./pages/MyCart";
 import Checkout from "./pages/Checkout";
