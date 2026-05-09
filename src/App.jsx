@@ -30,7 +30,6 @@ const App = () => {
             path="/shop/:id"
             element={<ProductDetails setOpenCart={setOpenCart} />}
           />
-          {/* <Route path="/shop/:id" element={<ProductDetails/>} /> */}
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/checkout" element={<Checkout />} />
