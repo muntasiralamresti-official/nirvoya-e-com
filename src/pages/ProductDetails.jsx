@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
-import { NextArrow, PrevArrow } from "../components/ui/Arrows";
+import { NextArrow, PrevArrow } from "../components/UI/Arrows";
 import { IoChevronForward, IoStar, IoStarSharp } from "react-icons/io5";
 import { FaHeart, FaCheckCircle } from "react-icons/fa";
 import Button from "../components/UI/Button";
