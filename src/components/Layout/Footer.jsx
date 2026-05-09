@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-content grid grid-cols-1 md:grid-cols-4 pt-15 pb-10 md:pb-21 gap-15 ">
           <div className="footer-content-list order-4 md:order-1 max-w-96">
             <Link to="/" className="hidden md:block">
-              <img src="Logo.png" alt="" />
+              <img src="Shopora.png" alt="" />
             </Link>
             <p className="max-w-96 pt-9 pb-6.5 hidden md:block ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -89,7 +89,7 @@ const Footer = () => {
         </div>
         <div className="copyright flex justify-center md:justify-between pb-5 md:pb-0">
           <p className="text-[#757575]">
-            Zora Shop - © 2026 All Rights Reserved
+            Shopora - © 2026 All Rights Reserved
           </p>
           <div className="flex items-center ">
             <h4 className="text-4.5 font-medium text-brand hidden md:block">

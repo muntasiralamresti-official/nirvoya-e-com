@@ -253,10 +253,10 @@ const [selectedProduct, setSelectedProduct] = useState(null);
             <div className="flex items-center gap-7">
               <div className="gap-2 flex items-center">
                 <h3 className="text-secondary/80 ">Quantity: </h3>
-                <div className="flex items-center bg-secondary/30 rounded-md overflow-hidden ">
+                <div className="flex items-center bg-secondary/30 rounded-full overflow-hidden ">
                   <Button
                     onClick={decreaseQty}
-                    className="px-3 py-2 text-lg text-secondary/50 "
+                    className="px-3 py-2 text-lg rounded-full text-secondary/50 hover:bg-brand bg-primary "
                   >
                     {" "}
                     -
@@ -269,7 +269,7 @@ const [selectedProduct, setSelectedProduct] = useState(null);
 
                   <Button
                     onClick={increaseQty}
-                    className="px-3 py-2 text-lg text-secondary/50"
+                    className="px-3 py-2 text-lg rounded-full text-secondary/50 hover:bg-brand bg-primary"
                   >
                     +
                   </Button>
@@ -297,13 +297,15 @@ const [selectedProduct, setSelectedProduct] = useState(null);
                       }}
 
                       
-                      className="bg-brand text-white font-medium text-xl py-3 px-11 rounded-md">
+                      className="bg-brand text-white font-medium text-xl py-3 px-11 rounded-md hover:bg-brand/80">
                     Add Cart
                   </Button>
-              <Button onClick={() => navigate("/checkout")} className="!text-brand bg-brand/10 font-bold border-2 border-brand text-xl py-3 px-11 rounded-md">
+              <Button onClick={() => navigate("/checkout")} className="!text-primary hover:bg-brand/80 hover:!text-white bg-brand/10 font-bold border-2 border-brand text-xl py-3 px-11 rounded-md">
                 Buy Now
               </Button>
             </div>
+
+            
           </div>
         </div>
       </section>

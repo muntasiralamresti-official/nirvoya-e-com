@@ -12,7 +12,9 @@ const Register = () => {
           <h1 className="text-2xl font-bold text-secondary-800">
             Create Account 🚀
           </h1>
-          <p className="text-lg text-secondary">Join Zora and start shopping</p>
+          <p className="text-lg text-secondary">
+            Join Shopora and start shopping
+          </p>
         </div>
 
         {/* Form */}

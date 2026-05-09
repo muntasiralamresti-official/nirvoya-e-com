@@ -30,19 +30,22 @@ const Banner = () => {
         <div className="w-full md:w-[66%]">
           <Slider {...settings}>
             <Link to="/">
-              <img src="/Banner-2.png" alt="Banner-2" className="w-full" />
+              <img src="/Hero-2.png" alt="Banner-2" className="w-full" />
             </Link>
             <Link to="/">
               <img src="/Banner-1.png" alt="Banner-1" className="w-full" />
             </Link>
             <Link to="/">
-              <img src="/Banner-3.png" alt="Banner-3" className="w-full" />
+              <img src="/Hero-3.png" alt="Banner-3" className="w-full" />
             </Link>
             <Link to="/">
-              <img src="/Banner-4.png" alt="Banner-4" className="w-full" />
+              <img src="/Hero-4.png" alt="Banner-4" className="w-full" />
             </Link>
             <Link to="/">
-              <img src="/Banner-5.png" alt="Banner-5" className="w-full" />
+              <img src="/Hero-5.png" alt="Banner-5" className="w-full" />
+            </Link>
+            <Link to="/">
+              <img src="/Hero-1.png" alt="Banner-5" className="w-full" />
             </Link>
           </Slider>
         </div>

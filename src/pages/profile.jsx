@@ -39,7 +39,7 @@ const Profile = () => {
     <div className="py-40 flex flex-col items-center justify-center gap-7">
 
       
-      <img src="./Logo.png" alt="logo" className="w-30 h-16" />
+      <img src="./Shopora.png" alt="logo" className="w-30 h-16" />
 
       <p className="text-2xl font-semibold text-center">
         Explore Your Shopping Experience

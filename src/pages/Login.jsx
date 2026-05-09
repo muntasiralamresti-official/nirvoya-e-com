@@ -34,7 +34,7 @@ const Login = () => {
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-primary">Welcome Back 👋</h1>
           <p className="text-lg text-secondary">
-            Login to your Zora Shop account
+            Login to your Shopora account
           </p>
         </div>
 
