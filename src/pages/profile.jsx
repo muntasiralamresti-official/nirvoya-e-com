@@ -4,7 +4,7 @@ import Button from "../components/UI/Button";
 import { useNavigate } from "react-router";
 import Direction from "../components/UI/Direction";
 
-const Profile = () => {
+const profile = () => {
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
   const navigate = useNavigate();
@@ -149,4 +149,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default profile;

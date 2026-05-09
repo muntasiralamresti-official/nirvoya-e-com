@@ -8,8 +8,8 @@ import Forget from "./pages/Forget";
 import Register from "./pages/Register";
 import Wishlist from "./pages/Wishlist";
 import ProductDetails from "./pages/ProductDetails";
-// import Profile from "./pages/Profile";
-import Profile from "@/pages/Profile.jsx";
+import Profile from "./pages/profile";
+// import Profile from "@/pages/Profile.jsx";
 import MyCart from "./pages/MyCart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
@@ -32,7 +32,7 @@ const App = () => {
             element={<ProductDetails setOpenCart={setOpenCart} />}
           />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<profile />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<OrderSuccess />} />
           <Route path="/order/:id" element={<OrderDetails />} />
