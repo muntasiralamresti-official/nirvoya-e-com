@@ -8,12 +8,13 @@ import Forget from "./pages/Forget";
 import Register from "./pages/Register";
 import Wishlist from "./pages/Wishlist";
 import ProductDetails from "./pages/ProductDetails";
-import Profile from "./pages/profile";
+// import profile from "./pages/profile";
 // import Profile from "@/pages/Profile.jsx";
 import MyCart from "./pages/MyCart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/OrderSuccess";
 import OrderDetails from "./pages/OrderDetails";
+import User from "./pages/User";
 
 const App = () => {
   const [openCart, setOpenCart] = useState(false);
@@ -32,7 +33,8 @@ const App = () => {
             element={<ProductDetails setOpenCart={setOpenCart} />}
           />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/profile" element={<profile />} />
+          {/* <Route path="/profile" element={<profile />} /> */}
+          <Route path="/user" element={<User />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/success" element={<OrderSuccess />} />
           <Route path="/order/:id" element={<OrderDetails />} />

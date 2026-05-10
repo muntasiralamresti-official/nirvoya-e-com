@@ -103,7 +103,7 @@ const Navbar = ({ setOpenCart }) => {
           <div className="flex gap-5 sm:gap-10  order-2 md:order-3 text-nowrap">
             {user ? (
               <div className="flex items-center gap-3">
-                <Link to="/profile" className="flex items-center gap-2">
+                <Link to="/user" className="flex items-center gap-2">
                   <img
                     src={user.image}
                     className="w-8 h-8 rounded-full border-2 bg-brand/20"
